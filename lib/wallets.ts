@@ -81,6 +81,18 @@ export const wallets: Wallet[] = [
     ],
   },
   {
+    slug: "walletchan",
+    name: "WalletChan",
+    domain: "walletchan.com",
+    github: "https://github.com/apoorvlathey/walletchan",
+    logo: "/logos/walletchan.png",
+    scores: { forward: true, reverse: true, avatar: true, offchain: true },
+    sources: [
+      "https://walletchan.com",
+      "https://github.com/apoorvlathey/walletchan",
+    ],
+  },
+  {
     slug: "zerion",
     name: "Zerion",
     domain: "zerion.io",
