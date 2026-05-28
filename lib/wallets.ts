@@ -97,7 +97,7 @@ export const wallets: Wallet[] = [
     domain: "metamask.io",
     github: "https://github.com/MetaMask/metamask-extension",
     logo: "/logos/metamask.png",
-    scores: { forward: true, reverse: false, avatar: false, offchain: false },
+    scores: { forward: true, reverse: false, avatar: false, offchain: true },
     sources: [
       "https://github.com/MetaMask/metamask-extension/pull/7177",
       "https://support.metamask.io/managing-my-wallet/sending-or-receiving-a-transaction-with-ens/",
