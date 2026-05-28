@@ -1,0 +1,42 @@
+name: Score correction
+description: Argue that a wallet's score on one or more criteria is wrong.
+title: "[Fix] <wallet name> — <criterion>"
+labels: ["score-correction"]
+body:
+  - type: input
+    id: wallet
+    attributes:
+      label: Wallet
+      placeholder: "MetaMask"
+    validations:
+      required: true
+  - type: dropdown
+    id: criterion
+    attributes:
+      label: Which criterion?
+      options:
+        - Forward Resolution
+        - Reverse Resolution
+        - Avatar
+        - Offchain Names
+    validations:
+      required: true
+  - type: dropdown
+    id: direction
+    attributes:
+      label: Current score is…
+      options: ["Too generous (should be ✗)", "Too strict (should be ✓)"]
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Screenshots, changelog links, official docs, or repro steps that prove the score is wrong.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Context
+      description: Wallet version, OS, anything else worth knowing.

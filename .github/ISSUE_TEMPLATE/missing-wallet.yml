@@ -1,0 +1,66 @@
+name: Missing wallet
+description: Suggest a wallet that should be added to the tier list.
+title: "[Add] <wallet name>"
+labels: ["missing-wallet"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Wallet name
+      placeholder: "Argent"
+    validations:
+      required: true
+  - type: input
+    id: domain
+    attributes:
+      label: Primary domain
+      placeholder: "argent.xyz"
+    validations:
+      required: true
+  - type: dropdown
+    id: forward
+    attributes:
+      label: Forward Resolution
+      description: Can a user type a .eth name in the send field and have it resolve?
+      options: ["Yes", "No", "Unclear"]
+    validations:
+      required: true
+  - type: dropdown
+    id: reverse
+    attributes:
+      label: Reverse Resolution
+      description: Does the wallet display .eth instead of the raw 0x address in account/tx UI?
+      options: ["Yes", "No", "Unclear"]
+    validations:
+      required: true
+  - type: dropdown
+    id: avatar
+    attributes:
+      label: Avatar
+      description: Does the wallet render the ENS avatar in its UI?
+      options: ["Yes", "No", "Unclear"]
+    validations:
+      required: true
+  - type: dropdown
+    id: offchain
+    attributes:
+      label: Offchain Names (CCIP-Read)
+      description: Does the wallet resolve cb.id / Basenames / name.uni.eth?
+      options: ["Yes", "No", "Unclear"]
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Links to official docs, changelogs, or PRs that back the claims above.
+      placeholder: |
+        - https://docs.example.com/ens
+        - https://github.com/example/wallet/pull/123
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Anything ambiguous worth flagging?
