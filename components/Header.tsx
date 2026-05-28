@@ -10,10 +10,10 @@ export default function Header() {
     <>
       <header className="flex items-start justify-between gap-4 sm:gap-8">
         <div className="flex flex-col gap-2 sm:gap-3 flex-1 min-w-0">
-          <h1 className="text-[clamp(30px,6vw,56px)] font-bold leading-[1.02] tracking-[-0.025em] text-paper">
+          <h1 className="text-[clamp(26px,5vw,42px)] font-bold leading-[1.02] tracking-[-0.025em] text-paper">
             ENS Tier List
           </h1>
-          <p className="text-[clamp(14px,2vw,20px)] font-medium leading-snug tracking-tight text-[var(--color-mute)]">
+          <p className="text-[clamp(13px,1.7vw,16px)] font-medium leading-snug tracking-tight text-[var(--color-mute)]">
             How good is your ENS integration?
           </p>
         </div>

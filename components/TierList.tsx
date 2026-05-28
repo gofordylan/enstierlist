@@ -27,14 +27,14 @@ export default function TierList() {
             className={`flex items-stretch ${i < TIERS.length - 1 ? "border-b border-[rgba(242,241,236,0.06)]" : ""}`}
           >
             <div
-              className="w-[64px] sm:w-[120px] md:w-[172px] shrink-0 flex items-center justify-center"
+              className="w-[56px] sm:w-[96px] md:w-[120px] shrink-0 flex items-center justify-center"
               style={{ background: TIER_BG[tier.key] }}
             >
-              <div className="font-mono text-[42px] sm:text-[80px] md:text-[108px] font-extrabold tracking-[-0.04em] leading-none text-[#1A1B1F]">
+              <div className="font-mono text-[34px] sm:text-[60px] md:text-[76px] font-extrabold tracking-[-0.04em] leading-none text-[#1A1B1F]">
                 {tier.key}
               </div>
             </div>
-            <div className="flex-1 flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 p-2 sm:p-3 md:p-4 min-h-[88px] sm:min-h-[140px] md:min-h-[172px]">
+            <div className="flex-1 flex flex-wrap items-center gap-2 sm:gap-3 p-2 sm:p-2.5 md:p-3 min-h-[72px] sm:min-h-[112px] md:min-h-[128px]">
               {buckets[tier.key].map((wallet) => (
                 <WalletTile
                   key={wallet.slug}

@@ -8,7 +8,7 @@ export default function WalletTile({ wallet, onClick }: { wallet: Wallet; onClic
     <button
       onClick={onClick}
       aria-label={`Expand ${wallet.name} score`}
-      className="shrink-0 w-[64px] h-[64px] sm:w-[96px] sm:h-[96px] md:w-[132px] md:h-[132px] bg-white rounded-[12px] sm:rounded-[16px] md:rounded-[22px] p-2 sm:p-3 md:p-[18px] flex items-center justify-center shadow-[0_4px_14px_rgba(0,0,0,0.25),0_0_0_1px_rgba(255,255,255,0.04)] hover:-translate-y-0.5 hover:shadow-[0_8px_22px_rgba(0,0,0,0.32)] active:translate-y-0 transition-all"
+      className="shrink-0 w-[56px] h-[56px] sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] bg-white rounded-[11px] sm:rounded-[14px] md:rounded-[18px] p-1.5 sm:p-2.5 md:p-[14px] flex items-center justify-center shadow-[0_4px_14px_rgba(0,0,0,0.25),0_0_0_1px_rgba(255,255,255,0.04)] hover:-translate-y-0.5 hover:shadow-[0_8px_22px_rgba(0,0,0,0.32)] active:translate-y-0 transition-all"
     >
       <Image
         src={wallet.logo}
