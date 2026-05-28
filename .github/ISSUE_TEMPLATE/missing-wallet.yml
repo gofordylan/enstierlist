@@ -44,8 +44,8 @@ body:
   - type: dropdown
     id: offchain
     attributes:
-      label: Offchain Names (CCIP-Read)
-      description: Does the wallet resolve cb.id / Basenames / name.uni.eth?
+      label: CCIP-Read names
+      description: Does the wallet resolve names stored offchain (cb.id, Basenames, name.uni.eth)?
       options: ["Yes", "No", "Unclear"]
     validations:
       required: true

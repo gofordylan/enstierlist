@@ -13,7 +13,7 @@ export const CRITERIA: { key: CriterionKey; label: string }[] = [
   { key: "forward", label: "Forward Resolution" },
   { key: "reverse", label: "Reverse Resolution" },
   { key: "avatar", label: "Avatar" },
-  { key: "offchain", label: "Offchain Names" },
+  { key: "offchain", label: "CCIP-Read names" },
 ];
 
 export type Tier = "S" | "A" | "B" | "C" | "F";
