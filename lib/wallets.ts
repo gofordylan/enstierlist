@@ -80,7 +80,7 @@ export const wallets: Wallet[] = [
     name: "Zerion",
     domain: "zerion.io",
     logo: "/logos/zerion.png",
-    scores: { forward: true, reverse: true, avatar: true, offchain: false },
+    scores: { forward: true, reverse: true, avatar: false, offchain: false },
     sources: [
       "https://zerion.io/ethereum-wallet",
       "https://zerion.io/blog/multichain-transaction-history-in-one-feed/",
