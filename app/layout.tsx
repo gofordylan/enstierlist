@@ -15,14 +15,20 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://enstierlist.com"),
   title: "ENS Tier List",
-  description: "How good is your ENS integration? 12 wallets, scored on 4 binary criteria.",
+  description: "How good is your ENS integration? Wallets scored on 4 binary criteria.",
   openGraph: {
     title: "ENS Tier List",
     description: "How good is your ENS integration?",
     url: "https://enstierlist.com",
     siteName: "enstierlist.com",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ENS Tier List",
+    description: "How good is your ENS integration?",
   },
 };
 
