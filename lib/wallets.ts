@@ -97,7 +97,7 @@ export const wallets: Wallet[] = [
     domain: "metamask.io",
     github: "https://github.com/MetaMask/metamask-extension",
     logo: "/logos/metamask.png",
-    scores: { forward: true, reverse: true, avatar: false, offchain: false },
+    scores: { forward: true, reverse: false, avatar: false, offchain: false },
     sources: [
       "https://github.com/MetaMask/metamask-extension/pull/7177",
       "https://support.metamask.io/managing-my-wallet/sending-or-receiving-a-transaction-with-ens/",
@@ -109,7 +109,7 @@ export const wallets: Wallet[] = [
     name: "Phantom",
     domain: "phantom.app",
     logo: "/logos/phantom.png",
-    scores: { forward: true, reverse: false, avatar: false, offchain: true },
+    scores: { forward: true, reverse: false, avatar: false, offchain: false },
     sources: [
       "https://help.phantom.com/hc/en-us/articles/34164163152147-Get-started-with-Base-in-Phantom",
       "https://help.phantom.com/hc/en-us/articles/5530158379539-How-to-send-crypto-from-Phantom",
@@ -121,7 +121,7 @@ export const wallets: Wallet[] = [
     domain: "ledger.com",
     github: "https://github.com/LedgerHQ/ledger-live",
     logo: "/logos/ledger.png",
-    scores: { forward: true, reverse: true, avatar: false, offchain: false },
+    scores: { forward: true, reverse: false, avatar: false, offchain: false },
     sources: [
       "https://www.ledger.com/blog/ledger-now-supports-ens-domain-adresses",
       "https://support.ledger.com/article/9710787581469-zd",
@@ -133,7 +133,7 @@ export const wallets: Wallet[] = [
     domain: "rabby.io",
     github: "https://github.com/RabbyHub/Rabby",
     logo: "/logos/rabby.png",
-    scores: { forward: true, reverse: false, avatar: false, offchain: false },
+    scores: { forward: true, reverse: false, avatar: false, offchain: true },
     sources: ["https://beta.walletbeat.eth.limo/rabby/", "https://rabby.io/"],
   },
   {
@@ -142,31 +142,8 @@ export const wallets: Wallet[] = [
     domain: "frame.sh",
     github: "https://github.com/floating/frame",
     logo: "/logos/frame.png",
-    scores: { forward: true, reverse: false, avatar: false, offchain: false },
+    scores: { forward: true, reverse: true, avatar: false, offchain: false },
     sources: ["https://github.com/floating/frame", "https://docs.frame.sh/"],
-  },
-  {
-    slug: "trust",
-    name: "Trust Wallet",
-    domain: "trustwallet.com",
-    logo: "/logos/trust.png",
-    scores: { forward: true, reverse: false, avatar: false, offchain: false },
-    sources: [
-      "https://trustwallet.com/blog/guides/ethereum-name-service-beginners-guide",
-      "https://trustwallet.com/blog/guides/sending-and-receiving-crypto-trust-wallet-basics",
-    ],
-  },
-  {
-    slug: "trezor",
-    name: "Trezor Suite",
-    domain: "trezor.io",
-    github: "https://github.com/trezor/trezor-suite",
-    logo: "/logos/trezor.png",
-    scores: { forward: false, reverse: false, avatar: false, offchain: false },
-    sources: [
-      "https://github.com/trezor/blockbook/issues/1108",
-      "https://trezor.io/guides/sending-receiving-staking-funds/sending-receiving/send-crypto-in-trezor-suite",
-    ],
   },
 ];
 
