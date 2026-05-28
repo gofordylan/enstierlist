@@ -1,6 +1,6 @@
 # enstierlist.com
 
-A tier list of 12 crypto wallets, scored on 4 binary ENS-integration criteria.
+A tier list of crypto wallets, scored on 4 binary ENS-integration criteria.
 
 ## Criteria
 
