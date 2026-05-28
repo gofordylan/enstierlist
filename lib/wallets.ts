@@ -93,6 +93,18 @@ export const wallets: Wallet[] = [
     ],
   },
   {
+    slug: "ambire",
+    name: "Ambire Wallet",
+    domain: "ambire.com",
+    github: "https://github.com/AmbireTech/wallet",
+    logo: "/logos/ambire.png",
+    scores: { forward: true, reverse: true, avatar: true, offchain: true },
+    sources: [
+      "https://www.ambire.com/",
+      "https://help.ambire.com/en",
+    ],
+  },
+  {
     slug: "zerion",
     name: "Zerion",
     domain: "zerion.io",
