@@ -19,8 +19,8 @@ export default function TierList() {
   const selected = wallets.find((w) => w.slug === selectedSlug) ?? wallets[0];
 
   return (
-    <div className="flex flex-col gap-8 sm:gap-10">
-      <div className="bg-surface border border-[var(--color-faint)] rounded-[14px] sm:rounded-[18px] overflow-hidden">
+    <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-6 md:items-start">
+      <div className="flex-1 min-w-0 bg-surface border border-[var(--color-faint)] rounded-[14px] sm:rounded-[18px] overflow-hidden">
         {TIERS.map((tier, i) => (
           <div
             key={tier.key}
@@ -47,7 +47,9 @@ export default function TierList() {
         ))}
       </div>
 
-      <ExpandedCard wallet={selected} />
+      <aside className="w-full md:w-[340px] md:shrink-0 md:sticky md:top-6">
+        <ExpandedCard wallet={selected} />
+      </aside>
     </div>
   );
 }
