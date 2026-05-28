@@ -4,8 +4,11 @@ export type Wallet = {
   slug: string;
   name: string;
   domain: string;
+  /** Public source repo, if the wallet is open source. */
+  github?: string;
   logo: string;
   scores: Record<CriterionKey, boolean>;
+  /** Research citations (not rendered, kept for traceability). */
   sources?: string[];
 };
 
@@ -46,6 +49,7 @@ export const wallets: Wallet[] = [
     slug: "rainbow",
     name: "Rainbow",
     domain: "rainbow.me",
+    github: "https://github.com/rainbow-me/rainbow",
     logo: "/logos/rainbow.png",
     scores: { forward: true, reverse: true, avatar: true, offchain: true },
     sources: [
@@ -57,6 +61,7 @@ export const wallets: Wallet[] = [
     slug: "uniswap",
     name: "Uniswap Wallet",
     domain: "wallet.uniswap.org",
+    github: "https://github.com/Uniswap/universe",
     logo: "/logos/uniswap.png",
     scores: { forward: true, reverse: true, avatar: true, offchain: true },
     sources: [
@@ -90,6 +95,7 @@ export const wallets: Wallet[] = [
     slug: "metamask",
     name: "MetaMask",
     domain: "metamask.io",
+    github: "https://github.com/MetaMask/metamask-extension",
     logo: "/logos/metamask.png",
     scores: { forward: true, reverse: true, avatar: false, offchain: false },
     sources: [
@@ -113,6 +119,7 @@ export const wallets: Wallet[] = [
     slug: "ledger",
     name: "Ledger Live",
     domain: "ledger.com",
+    github: "https://github.com/LedgerHQ/ledger-live",
     logo: "/logos/ledger.png",
     scores: { forward: true, reverse: true, avatar: false, offchain: false },
     sources: [
@@ -124,6 +131,7 @@ export const wallets: Wallet[] = [
     slug: "rabby",
     name: "Rabby",
     domain: "rabby.io",
+    github: "https://github.com/RabbyHub/Rabby",
     logo: "/logos/rabby.png",
     scores: { forward: true, reverse: false, avatar: false, offchain: false },
     sources: ["https://beta.walletbeat.eth.limo/rabby/", "https://rabby.io/"],
@@ -132,6 +140,7 @@ export const wallets: Wallet[] = [
     slug: "frame",
     name: "Frame",
     domain: "frame.sh",
+    github: "https://github.com/floating/frame",
     logo: "/logos/frame.png",
     scores: { forward: true, reverse: false, avatar: false, offchain: false },
     sources: ["https://github.com/floating/frame", "https://docs.frame.sh/"],
@@ -151,6 +160,7 @@ export const wallets: Wallet[] = [
     slug: "trezor",
     name: "Trezor Suite",
     domain: "trezor.io",
+    github: "https://github.com/trezor/trezor-suite",
     logo: "/logos/trezor.png",
     scores: { forward: false, reverse: false, avatar: false, offchain: false },
     sources: [

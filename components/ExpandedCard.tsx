@@ -3,10 +3,10 @@
 import Image from "next/image";
 import { CRITERIA, scoreOf, tierOf, type Wallet } from "@/lib/wallets";
 
-function sourceLabel(url: string): string {
+function githubLabel(url: string): string {
   try {
     const u = new URL(url);
-    return u.hostname.replace(/^www\./, "");
+    return `${u.hostname.replace(/^www\./, "")}${u.pathname.replace(/\/$/, "")}`;
   } catch {
     return url;
   }
@@ -91,27 +91,35 @@ export default function ExpandedCard({ wallet }: { wallet: Wallet }) {
         })}
       </ul>
 
-      {wallet.sources && wallet.sources.length > 0 && (
-        <div className="mt-auto px-4 sm:px-6 py-4 sm:py-5 border-t border-[rgba(242,241,236,0.06)]">
-          <div className="font-mono text-[10px] sm:text-[11px] font-bold tracking-[0.14em] uppercase text-[var(--color-dim)] mb-2.5">
-            Sources
-          </div>
-          <ul className="flex flex-col gap-1.5">
-            {wallet.sources.map((url) => (
-              <li key={url}>
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[12px] sm:text-[13px] text-[var(--color-mute)] hover:text-paper truncate block transition-colors"
-                >
-                  {sourceLabel(url)}
-                </a>
-              </li>
-            ))}
-          </ul>
+      <div className="mt-auto px-4 sm:px-6 py-4 sm:py-5 border-t border-[rgba(242,241,236,0.06)]">
+        <div className="font-mono text-[10px] sm:text-[11px] font-bold tracking-[0.14em] uppercase text-[var(--color-dim)] mb-2.5">
+          Links
         </div>
-      )}
+        <ul className="flex flex-col gap-1.5">
+          <li>
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[12px] sm:text-[13px] text-[var(--color-mute)] hover:text-paper truncate block transition-colors"
+            >
+              {wallet.domain}
+            </a>
+          </li>
+          {wallet.github && (
+            <li>
+              <a
+                href={wallet.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[12px] sm:text-[13px] text-[var(--color-mute)] hover:text-paper truncate block transition-colors"
+              >
+                {githubLabel(wallet.github)}
+              </a>
+            </li>
+          )}
+        </ul>
+      </div>
     </section>
   );
 }
