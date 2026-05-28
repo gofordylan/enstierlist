@@ -148,17 +148,6 @@ export const wallets: Wallet[] = [
     ],
   },
   {
-    slug: "exodus",
-    name: "Exodus",
-    domain: "exodus.com",
-    logo: "/logos/exodus.png",
-    scores: { forward: false, reverse: false, avatar: false, offchain: false },
-    sources: [
-      "https://www.exodus.com/support/en/articles/8598631-how-do-i-send-bitcoin-and-crypto-from-exodus",
-      "https://www.exodus.com/support/en/articles/8598893-explore-the-ethereum-web3-ecosystem-with-exodus",
-    ],
-  },
-  {
     slug: "trezor",
     name: "Trezor Suite",
     domain: "trezor.io",
