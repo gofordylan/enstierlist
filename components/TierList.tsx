@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { wallets, walletsByTier, TIERS, type Wallet } from "@/lib/wallets";
-import WalletTile from "./WalletTile";
+import { byTier, TIERS, type Project } from "@/lib/data";
+import ProjectTile from "./ProjectTile";
 import ExpandedCard from "./ExpandedCard";
 
 const TIER_BG: Record<string, string> = {
@@ -13,10 +13,10 @@ const TIER_BG: Record<string, string> = {
   F: "var(--color-tier-f)",
 };
 
-export default function TierList() {
-  const buckets = walletsByTier();
-  const [selectedSlug, setSelectedSlug] = useState<string>("rainbow");
-  const selected = wallets.find((w) => w.slug === selectedSlug) ?? wallets[0];
+export default function TierList({ items }: { items: Project[] }) {
+  const buckets = byTier(items);
+  const [selectedSlug, setSelectedSlug] = useState<string>(items[0]?.slug ?? "");
+  const selected = items.find((p) => p.slug === selectedSlug) ?? items[0];
 
   return (
     <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-6 md:items-stretch">
@@ -35,11 +35,11 @@ export default function TierList() {
               </div>
             </div>
             <div className="flex-1 flex flex-wrap items-center gap-2 sm:gap-3 p-2 sm:p-2.5 md:p-3 min-h-[72px] sm:min-h-[112px] md:min-h-[128px]">
-              {buckets[tier.key].map((wallet) => (
-                <WalletTile
-                  key={wallet.slug}
-                  wallet={wallet}
-                  onClick={() => setSelectedSlug(wallet.slug)}
+              {buckets[tier.key].map((project) => (
+                <ProjectTile
+                  key={project.slug}
+                  project={project}
+                  onClick={() => setSelectedSlug(project.slug)}
                 />
               ))}
             </div>
@@ -48,7 +48,7 @@ export default function TierList() {
       </div>
 
       <aside className="w-full md:w-[420px] md:shrink-0 flex">
-        <ExpandedCard wallet={selected} />
+        {selected && <ExpandedCard project={selected} />}
       </aside>
     </div>
   );
