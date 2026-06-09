@@ -4,16 +4,13 @@ import type { Project } from "./data";
 // Same strict binary as wallets: partial/undocumented support counts as false.
 export const apps: Project[] = [
   {
-    slug: "ens-app",
-    name: "ENS App",
-    domain: "app.ens.domains",
-    github: "https://github.com/ensdomains/ens-app-v3",
-    logo: "/logos/ens.svg",
+    slug: "efp",
+    name: "Ethereum Follow Protocol",
+    domain: "efp.app",
+    github: "https://github.com/ethereumfollowprotocol/app",
+    logo: "/logos/efp.png",
     scores: { forward: true, reverse: true, avatar: true, offchain: true },
-    sources: [
-      "https://ens.domains/",
-      "https://docs.ens.domains/learn/ccip-read/",
-    ],
+    sources: ["https://efp.app/", "https://docs.ethfollow.xyz/"],
   },
   {
     slug: "uniswap-app",
@@ -43,7 +40,7 @@ export const apps: Project[] = [
     github: "https://github.com/snapshot-labs/snapshot",
     logo: "/logos/snapshot.png",
     round: true,
-    scores: { forward: true, reverse: true, avatar: true, offchain: false },
+    scores: { forward: true, reverse: true, avatar: true, offchain: true },
     sources: [
       "https://docs.snapshot.box/user-guides/spaces/create/ens-domain",
       "https://snapshot.box/",
@@ -55,7 +52,7 @@ export const apps: Project[] = [
     domain: "farcaster.xyz",
     github: "https://github.com/farcasterxyz/protocol",
     logo: "/logos/farcaster.png",
-    scores: { forward: true, reverse: true, avatar: false, offchain: true },
+    scores: { forward: true, reverse: false, avatar: false, offchain: false },
     sources: [
       "https://github.com/farcasterxyz/protocol/discussions/90",
       "https://docs.farcaster.xyz/learn/what-is-farcaster/usernames",
@@ -85,7 +82,7 @@ export const apps: Project[] = [
     domain: "app.aave.com",
     github: "https://github.com/aave/interface",
     logo: "/logos/aave.png",
-    scores: { forward: false, reverse: true, avatar: false, offchain: false },
+    scores: { forward: true, reverse: true, avatar: true, offchain: false },
     sources: [
       "https://github.com/aave/aave-ui/issues/48",
       "https://github.com/aave/aave-ui/issues/144",
