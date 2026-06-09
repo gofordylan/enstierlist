@@ -9,6 +9,7 @@ export const apps: Project[] = [
     domain: "efp.app",
     github: "https://github.com/ethereumfollowprotocol/app",
     logo: "/logos/efp.png",
+    round: true,
     scores: { forward: true, reverse: true, avatar: true, offchain: true },
     sources: ["https://efp.app/", "https://docs.ethfollow.xyz/"],
   },
@@ -52,6 +53,7 @@ export const apps: Project[] = [
     domain: "farcaster.xyz",
     github: "https://github.com/farcasterxyz/protocol",
     logo: "/logos/farcaster.png",
+    round: true,
     scores: { forward: true, reverse: false, avatar: false, offchain: false },
     sources: [
       "https://github.com/farcasterxyz/protocol/discussions/90",
