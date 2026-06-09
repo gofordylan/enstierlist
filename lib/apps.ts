@@ -1,14 +1,14 @@
 import type { Project } from "./data";
 
-// dApp ENS-integration scores from public docs and shipped UI as of June 2026.
+// App ENS-integration scores from public docs and shipped UI as of June 2026.
 // Same strict binary as wallets: partial/undocumented support counts as false.
-export const dapps: Project[] = [
+export const apps: Project[] = [
   {
     slug: "ens-app",
     name: "ENS App",
     domain: "app.ens.domains",
     github: "https://github.com/ensdomains/ens-app-v3",
-    logo: "/logos/ens.jpg",
+    logo: "/logos/ens.svg",
     scores: { forward: true, reverse: true, avatar: true, offchain: true },
     sources: [
       "https://ens.domains/",
@@ -28,6 +28,15 @@ export const dapps: Project[] = [
     ],
   },
   {
+    slug: "wannabet",
+    name: "WannaBet",
+    domain: "app.heywannabet.com",
+    github: "https://github.com/gofordylan/wannabet-v2",
+    logo: "/logos/wannabet.webp",
+    scores: { forward: true, reverse: true, avatar: true, offchain: true },
+    sources: ["https://app.heywannabet.com/", "https://heywannabet.com/"],
+  },
+  {
     slug: "snapshot",
     name: "Snapshot",
     domain: "snapshot.box",
@@ -37,6 +46,18 @@ export const dapps: Project[] = [
     sources: [
       "https://docs.snapshot.box/user-guides/spaces/create/ens-domain",
       "https://snapshot.box/",
+    ],
+  },
+  {
+    slug: "farcaster",
+    name: "Farcaster",
+    domain: "farcaster.xyz",
+    github: "https://github.com/farcasterxyz/protocol",
+    logo: "/logos/farcaster.svg",
+    scores: { forward: true, reverse: true, avatar: false, offchain: true },
+    sources: [
+      "https://github.com/farcasterxyz/protocol/discussions/90",
+      "https://docs.farcaster.xyz/learn/what-is-farcaster/usernames",
     ],
   },
   {
@@ -55,8 +76,18 @@ export const dapps: Project[] = [
     domain: "etherscan.io",
     logo: "/logos/etherscan.png",
     scores: { forward: true, reverse: true, avatar: false, offchain: false },
+    sources: ["https://info.etherscan.com/ens-name-tags-on-etherscan/"],
+  },
+  {
+    slug: "aave",
+    name: "Aave",
+    domain: "app.aave.com",
+    github: "https://github.com/aave/interface",
+    logo: "/logos/aave.png",
+    scores: { forward: false, reverse: true, avatar: false, offchain: false },
     sources: [
-      "https://info.etherscan.com/ens-name-tags-on-etherscan/",
+      "https://github.com/aave/aave-ui/issues/48",
+      "https://github.com/aave/aave-ui/issues/144",
     ],
   },
   {
@@ -69,6 +100,18 @@ export const dapps: Project[] = [
     sources: [
       "https://help.safe.global/en/articles/40820-send-funds",
       "https://beta.walletbeat.eth.limo/safe/",
+    ],
+  },
+  {
+    slug: "hyperliquid",
+    name: "Hyperliquid",
+    domain: "app.hyperliquid.xyz",
+    logo: "/logos/hyperliquid.png",
+    // Uses its own .hl naming system (Hyperliquid Names), not ENS .eth.
+    scores: { forward: false, reverse: false, avatar: false, offchain: false },
+    sources: [
+      "https://app.hyperliquid.xyz/",
+      "https://hyperliquid-names.gitbook.io/hyperliquid-names/",
     ],
   },
 ];
