@@ -8,6 +8,8 @@ export type Project = {
   /** Public source repo, if the project is open source. */
   github?: string;
   logo: string;
+  /** Clip the logo to a circle (for square-art logos like Snapshot). */
+  round?: boolean;
   scores: Record<CriterionKey, boolean>;
   /** Research citations (not rendered, kept for traceability). */
   sources?: string[];

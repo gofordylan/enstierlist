@@ -42,6 +42,7 @@ export const apps: Project[] = [
     domain: "snapshot.box",
     github: "https://github.com/snapshot-labs/snapshot",
     logo: "/logos/snapshot.png",
+    round: true,
     scores: { forward: true, reverse: true, avatar: true, offchain: false },
     sources: [
       "https://docs.snapshot.box/user-guides/spaces/create/ens-domain",
@@ -53,7 +54,7 @@ export const apps: Project[] = [
     name: "Farcaster",
     domain: "farcaster.xyz",
     github: "https://github.com/farcasterxyz/protocol",
-    logo: "/logos/farcaster.svg",
+    logo: "/logos/farcaster.png",
     scores: { forward: true, reverse: true, avatar: false, offchain: true },
     sources: [
       "https://github.com/farcasterxyz/protocol/discussions/90",
@@ -95,7 +96,7 @@ export const apps: Project[] = [
     name: "Safe",
     domain: "app.safe.global",
     github: "https://github.com/safe-global/safe-wallet-monorepo",
-    logo: "/logos/safe.jpg",
+    logo: "/logos/safe.png",
     scores: { forward: true, reverse: false, avatar: false, offchain: false },
     sources: [
       "https://help.safe.global/en/articles/40820-send-funds",

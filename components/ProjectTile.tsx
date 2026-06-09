@@ -15,7 +15,7 @@ export default function ProjectTile({ project, onClick }: { project: Project; on
         alt={`${project.name} logo`}
         width={96}
         height={96}
-        className="w-full h-full object-contain"
+        className={`w-full h-full ${project.round ? "object-cover rounded-full" : "object-contain"}`}
         unoptimized
       />
     </button>

@@ -35,7 +35,7 @@ export default function ExpandedCard({ project }: { project: Project }) {
             alt={`${project.name} logo`}
             width={56}
             height={56}
-            className="w-full h-full object-contain"
+            className={`w-full h-full ${project.round ? "object-cover rounded-full" : "object-contain"}`}
             unoptimized
           />
         </a>
