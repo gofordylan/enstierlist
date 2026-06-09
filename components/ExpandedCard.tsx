@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { CRITERIA, scoreOf, tierOf, type Wallet } from "@/lib/wallets";
+import { CRITERIA, scoreOf, tierOf, type Project } from "@/lib/data";
 
 function githubLabel(url: string): string {
   try {
@@ -12,14 +12,14 @@ function githubLabel(url: string): string {
   }
 }
 
-export default function ExpandedCard({ wallet }: { wallet: Wallet }) {
-  const score = scoreOf(wallet);
-  const tier = tierOf(wallet);
-  const href = `https://${wallet.domain}`;
+export default function ExpandedCard({ project }: { project: Project }) {
+  const score = scoreOf(project);
+  const tier = tierOf(project);
+  const href = `https://${project.domain}`;
 
   return (
     <section
-      aria-label={`${wallet.name} score detail`}
+      aria-label={`${project.name} score detail`}
       className="bg-surface border border-[var(--color-faint)] rounded-[14px] sm:rounded-[18px] overflow-hidden flex flex-col flex-1 w-full"
     >
       <header className="flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-4 sm:py-5 border-b border-[rgba(242,241,236,0.06)]">
@@ -27,15 +27,15 @@ export default function ExpandedCard({ wallet }: { wallet: Wallet }) {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`Open ${wallet.name}`}
+          aria-label={`Open ${project.name}`}
           className="shrink-0 w-[44px] h-[44px] sm:w-[56px] sm:h-[56px] bg-white rounded-[10px] sm:rounded-[12px] p-1.5 sm:p-2 flex items-center justify-center"
         >
           <Image
-            src={wallet.logo}
-            alt={`${wallet.name} logo`}
+            src={project.logo}
+            alt={`${project.name} logo`}
             width={56}
             height={56}
-            className="w-full h-full object-contain"
+            className={`w-full h-full ${project.round ? "object-cover rounded-full" : "object-contain"}`}
             unoptimized
           />
         </a>
@@ -45,7 +45,7 @@ export default function ExpandedCard({ wallet }: { wallet: Wallet }) {
           rel="noopener noreferrer"
           className="text-[18px] sm:text-[22px] font-bold tracking-tight text-paper flex-1 min-w-0 truncate hover:underline underline-offset-4 decoration-1 decoration-[var(--color-mute)] transition-all inline-flex items-center gap-1.5"
         >
-          {wallet.name}
+          {project.name}
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="shrink-0 opacity-50">
             <path d="M3.5 2H10M10 2V8.5M10 2L2 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
@@ -60,7 +60,7 @@ export default function ExpandedCard({ wallet }: { wallet: Wallet }) {
 
       <ul className="flex flex-col">
         {CRITERIA.map((c, i) => {
-          const passes = wallet.scores[c.key];
+          const passes = project.scores[c.key];
           return (
             <li
               key={c.key}
@@ -103,18 +103,18 @@ export default function ExpandedCard({ wallet }: { wallet: Wallet }) {
               rel="noopener noreferrer"
               className="text-[12px] sm:text-[13px] text-[var(--color-mute)] hover:text-paper truncate block transition-colors"
             >
-              {wallet.domain}
+              {project.domain}
             </a>
           </li>
-          {wallet.github && (
+          {project.github && (
             <li>
               <a
-                href={wallet.github}
+                href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[12px] sm:text-[13px] text-[var(--color-mute)] hover:text-paper truncate block transition-colors"
               >
-                {githubLabel(wallet.github)}
+                {githubLabel(project.github)}
               </a>
             </li>
           )}

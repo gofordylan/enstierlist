@@ -61,7 +61,7 @@ export default function HowItWorks({ open, onClose }: { open: boolean; onClose: 
         </div>
         <div className="px-6 py-5 flex flex-col gap-5 text-[15px] leading-relaxed text-[var(--color-mute)]">
           <p>
-            Each wallet is scored on four binary criteria. Score 4/4 = <span className="text-paper font-semibold">S</span>,
+            Each wallet or app is scored on four binary criteria. Score 4/4 = <span className="text-paper font-semibold">S</span>,
             3/4 = <span className="text-paper font-semibold">A</span>, 2/4 = <span className="text-paper font-semibold">B</span>,
             1/4 = <span className="text-paper font-semibold">C</span>, 0/4 = <span className="text-paper font-semibold">F</span>.
           </p>

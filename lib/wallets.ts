@@ -1,50 +1,8 @@
-export type CriterionKey = "forward" | "reverse" | "avatar" | "offchain";
-
-export type Wallet = {
-  slug: string;
-  name: string;
-  domain: string;
-  /** Public source repo, if the wallet is open source. */
-  github?: string;
-  logo: string;
-  scores: Record<CriterionKey, boolean>;
-  /** Research citations (not rendered, kept for traceability). */
-  sources?: string[];
-};
-
-export const CRITERIA: { key: CriterionKey; label: string }[] = [
-  { key: "forward", label: "Forward Resolution" },
-  { key: "reverse", label: "Reverse Resolution" },
-  { key: "avatar", label: "Avatar" },
-  { key: "offchain", label: "CCIP-Read names" },
-];
-
-export type Tier = "S" | "A" | "B" | "C" | "F";
-
-export const TIERS: { key: Tier; color: string; label: string }[] = [
-  { key: "S", color: "var(--color-tier-s)", label: "Native" },
-  { key: "A", color: "var(--color-tier-a)", label: "Strong" },
-  { key: "B", color: "var(--color-tier-b)", label: "Solid" },
-  { key: "C", color: "var(--color-tier-c)", label: "Basic" },
-  { key: "F", color: "var(--color-tier-f)", label: "Missing" },
-];
-
-export function scoreOf(w: Wallet): number {
-  return Object.values(w.scores).filter(Boolean).length;
-}
-
-export function tierOf(w: Wallet): Tier {
-  const s = scoreOf(w);
-  if (s === 4) return "S";
-  if (s === 3) return "A";
-  if (s === 2) return "B";
-  if (s === 1) return "C";
-  return "F";
-}
+import type { Project } from "./data";
 
 // Scores from public docs, changelogs, and shipped UI as of May 2026.
 // Strict binary: partial/undocumented support counts as false.
-export const wallets: Wallet[] = [
+export const wallets: Project[] = [
   {
     slug: "rainbow",
     name: "Rainbow",
@@ -170,9 +128,3 @@ export const wallets: Wallet[] = [
     sources: ["https://github.com/floating/frame", "https://docs.frame.sh/"],
   },
 ];
-
-export function walletsByTier(): Record<Tier, Wallet[]> {
-  const buckets: Record<Tier, Wallet[]> = { S: [], A: [], B: [], C: [], F: [] };
-  for (const w of wallets) buckets[tierOf(w)].push(w);
-  return buckets;
-}
