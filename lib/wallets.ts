@@ -63,6 +63,18 @@ export const wallets: Project[] = [
     ],
   },
   {
+    slug: "jaw",
+    name: "JAW",
+    domain: "jaw.id",
+    github: "https://github.com/JustaName-id/jaw-mono",
+    logo: "/logos/jaw.png",
+    scores: { forward: true, reverse: true, avatar: true, offchain: true },
+    sources: [
+      "https://jaw.id",
+      "https://github.com/JustaName-id/jaw-mono",
+    ],
+  },
+  {
     slug: "zerion",
     name: "Zerion",
     domain: "zerion.io",
