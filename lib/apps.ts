@@ -114,4 +114,13 @@ export const apps: Project[] = [
       "https://hyperliquid-names.gitbook.io/hyperliquid-names/",
     ],
   },
+  {
+    slug: "blockscout",
+    name: "Blockscout",
+    domain: "https://eth.blockscout.com/",
+    github: "https://github.com/blockscout/blockscout",
+    logo: "/logos/blockscout.png",
+    scores: { forward: true, reverse: true, avatar: false, offchain: true },
+    sources: ["https://github.com/blockscout/blockscout-rs/tree/main/blockscout-ens"],
+  }
 ];
