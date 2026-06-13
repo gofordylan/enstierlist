@@ -117,7 +117,7 @@ export const apps: Project[] = [
   {
     slug: "blockscout",
     name: "Blockscout",
-    domain: "https://eth.blockscout.com/",
+    domain: "eth.blockscout.com",
     github: "https://github.com/blockscout/blockscout",
     logo: "/logos/blockscout.png",
     scores: { forward: true, reverse: true, avatar: false, offchain: true },
